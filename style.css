@@ -1,0 +1,1811 @@
+
+/* =====================
+ RESET
+===================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+overflow-x:hidden;
+
+background:
+linear-gradient(
+135deg,
+#050010,
+#180028,
+#37003c,
+#ff0077);
+
+background-size:400% 400%;
+
+animation:bgMove 15s infinite alternate;
+
+color:white;
+
+perspective:1000px;
+
+min-height:100vh;
+}
+
+@keyframes bgMove{
+
+0%{
+background-position:left;
+}
+
+100%{
+background-position:right;
+}
+
+}
+
+
+
+/* =====================
+ STARS
+===================== */
+
+.stars{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+background:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:50px 50px;
+
+opacity:.2;
+
+z-index:-5;
+
+animation:starMove 80s linear infinite;
+}
+
+@keyframes starMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-1000px);
+
+}
+
+}
+
+
+
+/* =====================
+ MOON
+===================== */
+
+.moon{
+
+position:absolute;
+
+top:50px;
+
+right:100px;
+
+width:150px;
+
+height:150px;
+
+border-radius:50%;
+
+background:white;
+
+box-shadow:
+
+0 0 50px white,
+
+0 0 120px white,
+
+0 0 200px white;
+}
+
+
+
+/* =====================
+ INTRO SCREEN
+===================== */
+
+#intro{
+
+position:fixed;
+
+width:100%;
+
+height:100vh;
+
+background:black;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+z-index:9999;
+
+}
+
+.initials{
+
+font-size:120px;
+
+font-weight:bold;
+
+transform-style:preserve-3d;
+
+perspective:1000px;
+
+}
+
+.initials span{
+
+display:inline-block;
+
+animation:carRun 5s ease forwards;
+
+text-shadow:
+
+0 0 20px cyan,
+
+0 0 50px hotpink,
+
+0 0 100px red;
+
+}
+
+
+
+@keyframes carRun{
+
+0%{
+
+transform:
+
+translateX(-1500px)
+
+rotateY(360deg)
+
+scale(.5);
+
+}
+
+70%{
+
+transform:
+
+translateX(200px)
+
+rotateY(0deg)
+
+scale(1.5);
+
+}
+
+85%{
+
+transform:
+
+translateX(0)
+
+scale(1.8);
+
+}
+
+100%{
+
+transform:
+
+scale(1);
+
+}
+
+}
+
+
+
+/* =====================
+ MAIN CONTENT
+===================== */
+
+#mainContent{
+
+display:block;
+
+}
+
+
+
+/* =====================
+ WELCOME PAGE
+===================== */
+
+#welcomePage{
+
+height:130vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+/* =====================
+ GLASS CARD
+===================== */
+
+.card{
+
+width:550px;
+
+padding:50px;
+
+background:
+
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:40px;
+
+box-shadow:
+
+0 0 30px rgba(255,255,255,.3),
+
+0 0 60px hotpink,
+
+0 0 100px red;
+
+text-align:center;
+
+transform-style:preserve-3d;
+
+animation:floatCard 4s infinite ease-in-out;
+
+}
+
+
+
+@keyframes floatCard{
+
+50%{
+
+transform:
+
+translateY(-15px)
+
+rotateX(5deg);
+
+}
+
+}
+
+
+
+/* =====================
+ TITLE
+===================== */
+
+.title{
+
+font-size:40px;
+
+font-weight:bold;
+
+text-shadow:
+
+0 0 20px pink,
+
+0 0 50px red,
+
+0 0 100px hotpink;
+
+animation:glow 2s infinite alternate;
+
+}
+
+
+
+@keyframes glow{
+
+from{
+
+text-shadow:
+
+0 0 20px pink;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 40px red,
+
+0 0 100px hotpink;
+
+}
+
+}
+
+
+
+/* =====================
+ MESSAGE
+===================== */
+
+.message-box{
+
+margin-top:30px;
+
+font-size:22px;
+
+line-height:40px;
+
+min-height:150px;
+
+}
+
+
+
+/* =====================
+ BUTTON
+===================== */
+
+#surpriseBtn{
+
+margin-top:30px;
+
+padding:18px 55px;
+
+font-size:24px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:
+
+linear-gradient(
+45deg,
+#ff0066,
+#ff7700);
+
+color:white;
+
+box-shadow:
+
+0 0 30px hotpink,
+
+0 0 80px red;
+
+transition:.5s;
+
+}
+
+
+
+#surpriseBtn:hover{
+
+transform:
+
+scale(1.1)
+
+rotateX(20deg);
+
+box-shadow:
+
+0 0 50px white,
+
+0 0 100px hotpink;
+
+}
+
+/* ===================================
+SURPRISE PAGE
+=================================== */
+
+#surprisePage{
+
+display:none;
+
+min-height:100vh;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+padding-top:100px;
+
+overflow:hidden;
+
+}
+
+
+
+/* ===================================
+HAPPY BIRTHDAY TEXT
+=================================== */
+
+.birthdayText{
+
+font-size:80px;
+
+font-weight:bold;
+
+text-shadow:
+
+0 0 20px pink,
+
+0 0 50px red,
+
+0 0 100px hotpink;
+
+animation:textZoom 2s infinite alternate;
+
+}
+
+
+.srushti{
+
+font-size:50px;
+
+color:white;
+
+text-shadow:
+
+0 0 20px cyan,
+
+0 0 60px hotpink,
+
+0 0 120px red;
+
+animation:glowName 2s infinite alternate;
+text-align:center;
+
+}
+
+
+@keyframes textZoom{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.1);
+
+}
+
+}
+
+
+@keyframes glowName{
+
+from{
+
+text-shadow:
+
+0 0 20px cyan;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 50px hotpink,
+
+0 0 100px red;
+
+}
+
+}
+
+
+
+/* ===================================
+LOVE TEXT
+=================================== */
+
+.loveText{
+
+font-size:35px;
+
+margin-top:20px;
+
+color:white;
+
+animation:floatLove 3s infinite ease-in-out;
+
+}
+
+@keyframes floatLove{
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+
+
+/* ===================================
+3D GIFT BOX
+=================================== */
+
+#giftBox{
+
+font-size:120px;
+
+cursor:pointer;
+
+margin-top:30px;
+
+transform-style:preserve-3d;
+
+animation:giftRotate 5s linear infinite;
+
+filter:drop-shadow(0 0 30px hotpink);
+
+}
+
+
+@keyframes giftRotate{
+
+0%{
+
+transform:
+
+rotateY(0deg)
+
+rotateX(0deg);
+
+}
+
+100%{
+
+transform:
+
+rotateY(360deg)
+
+rotateX(360deg);
+
+}
+
+}
+
+
+
+/* ===================================
+3D CAKE
+=================================== */
+
+.cake{
+
+position:relative;
+
+margin-top:60px;
+
+transform-style:preserve-3d;
+
+transform:
+
+rotateX(20deg);
+
+}
+
+
+.bottom-layer{
+
+width:260px;
+
+height:70px;
+
+background:#ff8cb8;
+
+border-radius:20px;
+
+box-shadow:
+
+0 15px 20px rgba(0,0,0,.5);
+
+}
+
+
+.middle-layer{
+
+width:220px;
+
+height:60px;
+
+background:#ffc0d9;
+
+margin:auto;
+
+margin-top:-10px;
+
+border-radius:20px;
+
+}
+
+
+.top-layer{
+
+width:180px;
+
+height:50px;
+
+background:#ffe5ef;
+
+margin:auto;
+
+margin-top:-10px;
+
+border-radius:20px;
+
+}
+
+
+
+/* ===================================
+CANDLE
+=================================== */
+
+.candle{
+
+position:absolute;
+
+top:-50px;
+
+left:122px;
+
+width:15px;
+
+height:60px;
+
+background:white;
+
+border-radius:20px;
+
+}
+
+
+.flame{
+
+position:absolute;
+
+top:-18px;
+
+left:-3px;
+
+width:22px;
+
+height:22px;
+
+background:orange;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 20px yellow,
+
+0 0 40px orange,
+
+0 0 80px red;
+
+animation:fire .4s infinite alternate;
+
+}
+
+
+@keyframes fire{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:
+
+scale(1.3)
+
+translateY(-3px);
+
+}
+
+}
+
+
+
+/* ===================================
+HEARTS
+=================================== */
+
+.heart{
+
+position:absolute;
+
+font-size:30px;
+
+animation:heartFly 8s linear infinite;
+
+}
+
+
+@keyframes heartFly{
+
+0%{
+
+transform:
+
+translateY(100vh);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(-100vh);
+
+opacity:0;
+
+}
+
+}
+
+
+
+/* ===================================
+BALLOONS
+=================================== */
+
+.balloon{
+
+position:absolute;
+
+width:80px;
+
+height:100px;
+
+border-radius:50%;
+
+bottom:-200px;
+
+animation:rise 15s linear infinite;
+
+}
+
+
+.balloon::after{
+
+content:"";
+
+position:absolute;
+
+width:2px;
+
+height:80px;
+
+background:white;
+
+top:100px;
+
+left:40px;
+
+}
+
+
+@keyframes rise{
+
+from{
+
+transform:
+
+translateY(0);
+
+}
+
+to{
+
+transform:
+
+translateY(-120vh);
+
+}
+
+}
+
+
+
+/* ===================================
+ROSE PETALS
+=================================== */
+
+.petal{
+
+position:absolute;
+
+font-size:25px;
+
+animation:fallPetal 10s linear infinite;
+
+}
+
+
+@keyframes fallPetal{
+
+0%{
+
+transform:
+
+translateY(-100px)
+
+rotate(0deg);
+
+}
+
+100%{
+
+transform:
+
+translateY(110vh)
+
+rotate(360deg);
+
+}
+
+}
+
+
+
+/* ===================================
+SPARKLES
+=================================== */
+
+.sparkle{
+
+position:absolute;
+
+font-size:20px;
+
+animation:spark 2s linear infinite;
+
+}
+
+
+@keyframes spark{
+
+0%{
+
+opacity:0;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+}
+
+}
+
+
+
+/* ====================================
+LOVE LETTER
+==================================== */
+
+.letter{
+
+width:700px;
+
+padding:40px;
+
+margin-top:80px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+box-shadow:
+
+0 0 30px rgba(255,255,255,.2),
+
+0 0 80px hotpink;
+
+transform-style:preserve-3d;
+
+transition:.5s;
+
+}
+
+.letter:hover{
+
+transform:
+
+rotateX(8deg)
+
+scale(1.03);
+
+}
+
+.letter h2{
+
+font-size:40px;
+
+color:white;
+
+text-shadow:
+
+0 0 20px pink;
+
+}
+
+.letter p{
+
+margin-top:20px;
+
+font-size:22px;
+
+line-height:40px;
+
+color:white;
+
+}
+
+
+
+/* ====================================
+PHOTO GALLERY
+==================================== */
+
+.gallery{
+
+position:relative;
+
+width:100%;
+
+height:1500px;
+
+margin-top:100px;
+
+overflow:hidden;
+
+}
+
+.photo{
+
+position:absolute;
+
+width:250px;
+
+padding:12px;
+
+background:white;
+
+border-radius:15px;
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.5);
+
+transition:.6s;
+
+transform-style:preserve-3d;
+
+}
+
+.photo img{
+
+width:100%;
+
+height:300px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+}
+
+.photo:hover{
+
+transform:
+
+scale(1.15)
+
+rotateY(20deg);
+
+z-index:100;
+
+}
+
+
+
+.photo1{
+
+top:50px;
+
+left:5%;
+
+transform:rotate(-15deg);
+
+}
+
+.photo2{
+
+top:180px;
+
+left:30%;
+
+transform:rotate(10deg);
+
+}
+
+.photo3{
+
+top:70px;
+
+right:10%;
+
+transform:rotate(-8deg);
+
+}
+
+.photo4{
+
+top:400px;
+
+left:15%;
+
+transform:rotate(15deg);
+
+}
+
+.photo5{
+
+top:450px;
+
+right:15%;
+
+transform:rotate(-15deg);
+
+}
+
+
+.photo6{
+top:120px;
+left:60%;
+transform:rotate(12deg);
+}
+
+.photo7{
+top:260px;
+left:75%;
+transform:rotate(-10deg);
+}
+
+.photo8{
+top:620px;
+left:5%;
+transform:rotate(8deg);
+}
+
+.photo9{
+top:700px;
+left:35%;
+transform:rotate(-14deg);
+}
+
+.photo10{
+top:650px;
+right:10%;
+transform:rotate(15deg);
+}
+
+.photo11{
+top:980px;
+left:20%;
+transform:rotate(-8deg);
+}
+
+.photo12{
+top:1020px;
+right:18%;
+transform:rotate(10deg);
+}
+
+
+
+/* ====================================
+VIDEO SECTION
+==================================== */
+
+.videoSection{
+
+margin-top:300px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.videoSection video{
+
+width:900px;
+
+border-radius:30px;
+
+box-shadow:
+
+0 0 50px hotpink,
+
+0 0 100px red;
+
+}
+
+
+
+/* ====================================
+CANVAS FIREWORKS
+==================================== */
+
+#canvas{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+
+
+/* ====================================
+PIGEONS
+==================================== */
+
+.bird{
+
+position:absolute;
+
+font-size:60px;
+
+top:20%;
+
+left:-100px;
+
+animation:flyBird 15s linear infinite;
+
+}
+
+@keyframes flyBird{
+
+0%{
+
+left:-100px;
+
+}
+
+100%{
+
+left:110%;
+
+}
+
+}
+
+
+
+/* ====================================
+HEART CONTAINER
+==================================== */
+
+#hearts-container{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+}
+
+
+
+/* ====================================
+BALLOON CONTAINER
+==================================== */
+
+#balloons{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+
+
+/* ====================================
+PETALS
+==================================== */
+
+#petals{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+
+
+/* ====================================
+RESPONSIVE
+==================================== */
+
+@media(max-width:768px){
+
+.card{
+
+width:95%;
+
+padding:30px;
+
+}
+
+.title{
+
+font-size:20px;
+
+}
+
+.birthdayText{
+
+font-size:20px;
+
+}
+
+.srushti{
+text-align:center;
+font-size:50px;
+
+}
+
+.loveText{
+
+font-size:22px;
+
+}
+
+.letter{
+
+width:95%;
+
+}
+
+.letter p{
+
+font-size:18px;
+
+line-height:30px;
+
+}
+
+.photo{
+
+width:180px;
+
+}
+
+.photo img{
+
+height:220px;
+
+}
+
+.videoSection video{
+
+width:95%;
+
+}
+
+}
+
+
+
+/* ====================================
+SCROLLBAR
+==================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:hotpink;
+
+border-radius:20px;
+
+}
+
+
+
+/* ====================================
+FINAL GLOW EFFECT
+==================================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,255,255,.05),
+
+transparent
+
+);
+
+pointer-events:none;
+
+}
+
+
+
+#giftContainer{
+
+position:relative;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+margin-top:40px;
+
+}
+
+#giftBox{
+
+font-size:120px;
+
+cursor:pointer;
+
+animation:giftRotate 4s linear infinite;
+
+}
+
+#surpriseCards{
+
+display:none;
+
+gap:25px;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.surpriseCard{
+
+width:220px;
+
+height:150px;
+
+background:
+
+rgba(255,255,255,.1);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:28px;
+
+color:white;
+
+box-shadow:
+
+0 0 30px hotpink;
+
+transform:
+
+rotateY(90deg);
+
+opacity:0;
+
+transition:1s;
+
+}
+
+.surpriseCard:hover{
+
+transform:
+
+scale(1.1)
+
+rotateY(20deg);
+
+}
+
+
+#countdown{
+
+display:flex;
+
+gap:25px;
+
+justify-content:center;
+
+margin-top:40px;
+
+}
+
+.time-box{
+
+width:120px;
+
+height:120px;
+
+background:
+
+rgba(255,255,255,.1);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:
+
+0 0 30px hotpink;
+
+animation:floatBox 3s infinite;
+
+}
+
+.time-box span{
+
+font-size:40px;
+
+font-weight:bold;
+
+color:white;
+
+}
+
+.time-box small{
+
+font-size:18px;
+
+color:#fff;
+
+}
+
+@keyframes floatBox{
+
+50%{
+
+transform:
+
+translateY(-10px);
+
+}
+
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media screen and (max-width:768px){
+
+body{
+overflow-x:hidden;
+}
+
+/* Intro */
+
+.initials{
+font-size:50px;
+text-align:center;
+}
+
+/* Moon */
+
+.moon{
+width:80px;
+height:80px;
+top:20px;
+right:20px;
+}
+
+/* Card */
+
+.card{
+width:95%;
+padding:20px;
+}
+
+/* Titles */
+
+.title{
+font-size:16px;
+}
+
+.subTitle{
+font-size:16px;
+}
+
+.message-box{
+font-size:16px;
+line-height:28px;
+}
+
+/* Countdown */
+
+#countdown{
+flex-wrap:wrap;
+gap:10px;
+}
+
+.time-box{
+width:80px;
+height:80px;
+}
+
+.time-box span{
+font-size:24px;
+}
+
+.time-box small{
+font-size:12px;
+}
+
+/* Button */
+
+#surpriseBtn{
+padding:15px 30px;
+font-size:18px;
+}
+
+/* Birthday Text */
+
+.birthdayText{
+font-size:32px;
+text-align:center;
+}
+
+.srushti{
+font-size:40px;
+text-align:center;
+}
+
+.loveText{
+font-size:18px;
+text-align:center;
+}
+
+/* Gift */
+
+#giftBox{
+font-size:80px;
+}
+
+/* Cards */
+
+.surpriseCard{
+width:90%;
+height:100px;
+font-size:22px;
+}
+
+/* Cake */
+
+.cake{
+transform:scale(.7);
+}
+
+/* Letter */
+
+.letter{
+width:95%;
+padding:20px;
+}
+
+.letter h2{
+font-size:28px;
+}
+
+.letter p{
+font-size:16px;
+line-height:28px;
+}
+
+/* Gallery */
+
+.gallery{
+height:1500px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+.photo{
+position:relative;
+width:90%;
+top:0 !important;
+left:0 !important;
+right:0 !important;
+transform:none !important;
+}
+
+.photo img{
+height:auto;
+}
+
+/* Video */
+
+.videoSection video{
+width:95%;
+}
+
+/* Bird */
+
+.bird{
+font-size:40px;
+}
+
+/* Heart */
+
+.heart{
+font-size:20px;
+}
+}
+
+
+/* Small Mobiles */
+
+@media screen and (max-width:480px){
+
+.title{
+font-size:28px;
+}
+
+.initials{
+font-size:35px;
+}
+
+.birthdayText{
+font-size:25px;
+}
+
+.srushti{
+font-size:30px;
+text-align:center;
+}
+
+#giftBox{
+font-size:60px;
+}
+
+.time-box{
+width:70px;
+height:70px;
+}
+
+.time-box span{
+font-size:20px;
+}
+
+}
